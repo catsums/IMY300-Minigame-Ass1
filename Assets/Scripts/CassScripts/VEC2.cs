@@ -54,7 +54,7 @@ namespace VEC2{
         public static Vector2 Ratioed(this Vector2 v){
             var sum = v.SumOfParts();
             return new Vector2(
-                MY.safeDivide(v.x,sum), MY.safeDivide(v.y,sum)
+                MY.SafeDivide(v.x,sum), MY.SafeDivide(v.y,sum)
             );
         }
         public static float Dot(this Vector2 v, Vector2 other){
@@ -122,7 +122,7 @@ namespace VEC2{
 		}
         public static Vector2 Inverse(this Vector2 v){
             return new Vector2(
-                MY.safeDivide(1,v.x), MY.safeDivide(1,v.y)
+                MY.SafeDivide(1,v.x), MY.SafeDivide(1,v.y)
             );
         }
         public static Vector2 Flipped(this Vector2 v){
@@ -136,7 +136,7 @@ namespace VEC2{
             }
 
             return new Vector2(
-                MY.safeDivide(x, arr.Length), MY.safeDivide(y,arr.Length)
+                MY.SafeDivide(x, arr.Length), MY.SafeDivide(y,arr.Length)
             );
         }
         public static Vector2 MidPoint(this Vector2 v, Vector2 other){
@@ -148,7 +148,7 @@ namespace VEC2{
             }
 
             return new Vector2(
-                MY.safeDivide(x, arr.Length), MY.safeDivide(y,arr.Length)
+                MY.SafeDivide(x, arr.Length), MY.SafeDivide(y,arr.Length)
             );
         }
         public static Vector2 Floor(this Vector2 v){
@@ -165,14 +165,14 @@ namespace VEC2{
             return -(Vector2.Reflect(v,norm));
         }
         public static Vector2 Project(this Vector2 v, Vector2 norm){
-            return (norm * MY.safeDivide(Vector2.Dot(v,norm), norm.LengthSquared()));
+            return (norm * MY.SafeDivide(Vector2.Dot(v,norm), norm.LengthSquared()));
         }
         public static Vector2 Slide(this Vector2 v, Vector2 other){
             return (v - (other * Vector2.Dot(v,other)));
         }
 
         public static float Gradient(this Vector2 v){
-            return MY.safeDivide(v.y, v.x);
+            return MY.SafeDivide(v.y, v.x);
         }
 
         public static Vector2 ClosestPoint(this Vector2 v,Vector2[] arr, bool exclusive=false){
@@ -286,21 +286,21 @@ namespace VEC2{
 
         public float Gradient{
             get {
-                return MY.safeDivide(- a, b);
+                return MY.SafeDivide(- a, b);
             }
         }public float m{
             get { return Gradient;}
         }
         public float XIntercept{
             get {
-                return MY.safeDivide(- c, a);
+                return MY.SafeDivide(- c, a);
             }
         }public float f{
             get { return XIntercept;}
         }
         public float YIntercept{
             get {
-                return MY.safeDivide(- c, b);
+                return MY.SafeDivide(- c, b);
             }
         }public float e{
             get { return YIntercept;}
@@ -308,7 +308,7 @@ namespace VEC2{
 
         public Vector2Line(Vector2 v1, Vector2 v2){
             var vX = (v1 - v2);
-            var _m = MY.safeDivide(vX.y, vX.x);
+            var _m = MY.SafeDivide(vX.y, vX.x);
 
             if(float.IsInfinity(_m)){
                 //vertical
@@ -322,10 +322,10 @@ namespace VEC2{
                 this.a = 0;
             }else{
                 var _e = (v1.y) - (_m * (v1.x));
-                var _f = MY.safeDivide(-_e, _m);
+                var _f = MY.SafeDivide(-_e, _m);
 
                 this.c = - (_f * _m);
-                this.b = MY.safeDivide(-this.c, _e);
+                this.b = MY.SafeDivide(-this.c, _e);
                 this.a = - (this.b * _m);
             }
         }
@@ -333,12 +333,12 @@ namespace VEC2{
         public Vector2Line(float xIntOrGradient, float yInt, bool useIntercepts = false){
             float _f, _e, _m;
             if(useIntercepts){
-                _m = MY.safeDivide(-yInt, xIntOrGradient);
+                _m = MY.SafeDivide(-yInt, xIntOrGradient);
                 _e = yInt;
                 _f = xIntOrGradient;
 
                 this.c = -(_f * _m);
-                this.b = MY.safeDivide(-this.c, _e);
+                this.b = MY.SafeDivide(-this.c, _e);
                 this.a = - (this.b * _m);
             }else{
                 _m = xIntOrGradient;
@@ -354,10 +354,10 @@ namespace VEC2{
                     this.b = -1;
                     this.a = 0;
                 }else{
-                    _f = MY.safeDivide(-_e, _m);
+                    _f = MY.SafeDivide(-_e, _m);
 
                     this.c = - (_f * _m);
-                    this.b = MY.safeDivide(-this.c, _e);
+                    this.b = MY.SafeDivide(-this.c, _e);
                     this.a = - (this.b * _m);
                 }
                 
@@ -378,16 +378,16 @@ namespace VEC2{
 
         public float GetX(float y){
             if(b != 0){
-                return MY.safeDivide((y - e), m);
+                return MY.SafeDivide((y - e), m);
             }else{
-                return MY.safeDivide(-c, a);
+                return MY.SafeDivide(-c, a);
             }
         }
         public float GetY(float x){
             if(a != 0){
                 return (m * x) + e;
             }else{
-                return MY.safeDivide(-c, b);
+                return MY.SafeDivide(-c, b);
             }
         }
 
@@ -469,8 +469,8 @@ namespace VEC2{
                 AC = (a2c1-a1c2);
             }
 
-            var x = MY.safeDivide(BC,AB);
-            var y = MY.safeDivide(AC,AB);
+            var x = MY.SafeDivide(BC,AB);
+            var y = MY.SafeDivide(AC,AB);
 
             return new Vector2(x,y);
         }
@@ -481,9 +481,9 @@ namespace VEC2{
             }else if(b == 0){
                 return new Vector2Line(b,a,pt.y);
             }else{
-                var grad = MY.safeDivide(-1, Gradient);
+                var grad = MY.SafeDivide(-1, Gradient);
                 var yInt = (pt.y) + ((1/grad)*pt.x);
-                var xInt = MY.safeDivide(-yInt, grad);
+                var xInt = MY.SafeDivide(-yInt, grad);
 
                 if(float.IsInfinity(xInt)){
                     return new Vector2Line(grad,yInt,false);
@@ -505,7 +505,7 @@ namespace VEC2{
             var normal = Normal();
             var unitNormal = normal.normalized;
 
-            var unitC = MY.safeDivide(c, normal.magnitude);
+            var unitC = MY.SafeDivide(c, normal.magnitude);
             
             var signedDist = (unitNormal.x * pt.x) + (unitNormal.y * pt.y) + unitC;
 

@@ -190,6 +190,7 @@ public class SpriteRendererGroup : MonoBehaviour
 		}
 	}
 	
+	
 	void Update()
 	{
 		if(HasChanges()){

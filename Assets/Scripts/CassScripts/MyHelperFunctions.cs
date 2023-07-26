@@ -1,15 +1,14 @@
+using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using System.Numerics;
-// using UnityEngine;
-// using System.Text.Json;
 
 namespace MyHelperFunctions
 {
-	public class MY{
+	public static class MY{
 
-		static public long safeDivide(long a, long b){
+		static public long SafeDivide(long a, long b){
 			long INF = long.MaxValue;
 			long NEG_INF = long.MinValue;
 
@@ -25,7 +24,7 @@ namespace MyHelperFunctions
 			if(b == INF || b == -INF) return 0;
 			
 			return (a / b);
-		}static public double safeDivide(double a, double b){
+		}static public double SafeDivide(double a, double b){
 			double INF = double.PositiveInfinity;
 			double NEG_INF = double.NegativeInfinity;
 
@@ -41,7 +40,7 @@ namespace MyHelperFunctions
 			if(b == INF || b == -INF) return 0;
 			
 			return (a / b);
-		}static public float safeDivide(float a, float b){
+		}static public float SafeDivide(float a, float b){
 			float INF = float.PositiveInfinity;
 			float NEG_INF = float.NegativeInfinity;
 
@@ -58,7 +57,7 @@ namespace MyHelperFunctions
 			
 			return (a / b);
 		}
-		static public bool isInRange<T>(T num, T min, T max, bool inclusive = true) where T : IComparable
+		static public bool IsInRange<T>(T num, T min, T max, bool inclusive = true) where T : IComparable
 		{
 			if(inclusive){
 				return (num.CompareTo(min) >= 0 && num.CompareTo(max) <= 0);
@@ -67,20 +66,20 @@ namespace MyHelperFunctions
 			}
 		}
 
-		static public int mod(int a, int b){
+		static public int MOD(int a, int b){
 			return ((a % b) + b) % b;
 		}
-		static public long mod(long a, long b){
+		static public long MOD(long a, long b){
 			return ((a % b) + b) % b;
-		}static public decimal mod(decimal a, decimal b){
+		}static public decimal MOD(decimal a, decimal b){
 			return ((a % b) + b) % b;
-		}static public float mod(float a, float b){
+		}static public float MOD(float a, float b){
 			return ((a % b) + b) % b;
-		}static public double mod(double a, double b){
+		}static public double MOD(double a, double b){
 			return ((a % b) + b) % b;
 		}
 
-		static public long sumOfArray(long[] arr, Func<long,long> additionFunc = null){
+		static public long SumOfArray(long[] arr, Func<long,long> additionFunc = null){
 			if(additionFunc == null){
 				additionFunc = (x) => {
 					return x;
@@ -91,7 +90,7 @@ namespace MyHelperFunctions
 				sum += additionFunc(item);
 			}
 			return sum;
-		}static public decimal sumOfArray(decimal[] arr, Func<decimal,decimal> additionFunc = null){
+		}static public decimal SumOfArray(decimal[] arr, Func<decimal,decimal> additionFunc = null){
 			if(additionFunc == null){
 				additionFunc = (x) => {
 					return x;
@@ -104,11 +103,11 @@ namespace MyHelperFunctions
 			return sum;
 		}
 
-		static public List<Vector2> getClosestPathInCircle(List<Vector2> arr, int _from, int _to, bool clockwiseBias = true){
-			return MY.getClosestPathInCircle(arr.ToArray(), _from, _to, clockwiseBias);
+		static public List<Vector2> GetClosestPathInCircle(List<Vector2> arr, int _from, int _to, bool clockwiseBias = true){
+			return MY.GetClosestPathInCircle(arr.ToArray(), _from, _to, clockwiseBias);
 		}
-		static public List<Vector2> getClosestPathInCircle(Vector2[] arr, int _from, int _to, bool clockwiseBias = true){
-			if(!MY.isInRange<int>(_from, 0, arr.Length-1) || !MY.isInRange<int>(_to, 0, arr.Length-1)){
+		static public List<Vector2> GetClosestPathInCircle(Vector2[] arr, int _from, int _to, bool clockwiseBias = true){
+			if(!MY.IsInRange<int>(_from, 0, arr.Length-1) || !MY.IsInRange<int>(_to, 0, arr.Length-1)){
 				return new List<Vector2>();
 			}
 
@@ -119,14 +118,14 @@ namespace MyHelperFunctions
 			List<Vector2> arrX;
 
 			while(arrL.Count < arr.Length){
-				int _i = (int) MY.mod(iL, arr.Length);
+				int _i = (int) MY.MOD(iL, arr.Length);
 
 				arrL.Add(arr[_i]);
 				if(Math.Abs(_i) == _to) break;
 				iL --;
 			}
 			while(arrR.Count < arr.Length){
-				int _i = (int) MY.mod(iR, arr.Length);
+				int _i = (int) MY.MOD(iR, arr.Length);
 
 				arrR.Add(arr[_i]);
 				if(Math.Abs(_i) == _to) break;
@@ -146,10 +145,16 @@ namespace MyHelperFunctions
 			
 		}
 
-		public static long Lerp(long a, long b, long t) {
-			return a + t * ( b - a );
-		}public static long LerpT(long a, long b, long L) {
+		public static long Lerp(long a, long b, float t) {
+			return (long) (a + t * ( b - a ));
+		}public static float LerpT(long a, long b, long L) {
 			if (b==a) return long.MaxValue;
+			return (L-a)/(b-a);
+		}
+		public static int Lerp(int a, int b, float t) {
+			return (int) (a + t * ( b - a ));
+		}public static float LerpT(int a, int b, int L) {
+			if (b==a) return int.MaxValue;
 			return (L-a)/(b-a);
 		}
 		public static double Lerp(double a, double b, double t) {
@@ -163,6 +168,38 @@ namespace MyHelperFunctions
 		}public static float LerpT(float a, float b, float L) {
 			if (b==a) return float.PositiveInfinity;
 			return (L-a)/(b-a);
+		}
+
+		public static T RandomArrayItem<T>(T[] arr){
+			int index = RandomInt(arr.Length);
+			return arr[index];
+		}
+
+		public static int RandomInt(int max, bool inclusive=false){
+   			Random random = new Random();
+			return random.Next(0, max + (inclusive ? 1:0) );
+		}
+		public static int RandomInt(int min, int max, bool inclusive=false){
+   			Random random = new Random();
+			return random.Next(min, max + (inclusive ? 1:0) );
+		}
+		public static float RandomFloat(float min, float max){
+   			Random random = new Random();
+			var t = (float) random.NextDouble();
+			return Lerp(min,max,t);
+		}
+		public static double RandomDouble(double min, float max){
+   			Random random = new Random();
+			var t = random.NextDouble();
+			return Lerp(min,max,t);
+		}
+
+		public static string RandomString(int len, string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"){
+   			Random random = new Random();
+			return new string(Enumerable.Repeat(chars, len).Select(s => s[random.Next(s.Length)]).ToArray());
+		}
+		public static string RandomID(int len, string prefix = "", string suffix = ""){
+			return $"{prefix}{RandomString(len)}{suffix}";
 		}
 
 

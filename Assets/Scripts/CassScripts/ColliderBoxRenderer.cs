@@ -8,6 +8,7 @@ using VEC2;
 
 [ExecuteInEditMode]
 public class ColliderBoxRenderer : MonoBehaviour{
+	
 	Collider2D myCollider;
 	SpriteShapeRenderer sprRenderer;
 	SpriteShapeController sprController;
@@ -28,11 +29,13 @@ public class ColliderBoxRenderer : MonoBehaviour{
 	void Awake()
 	{
 		if(!shapeProfile){
-			shapeProfile = Resources.Load<SpriteShape>("./Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shape Profiles/Sprite Shape Profile.asset");
-		}
-		if(shapeProfile){
+			shapeProfile = Resources.Load<SpriteShape>("ScriptResources/Sprite Shape Profile");
 			shapeProfile = Instantiate(shapeProfile);
 		}
+		
+		// if(shapeProfile){
+		// 	shapeProfile = Instantiate(shapeProfile);
+		// }
 		
 	}
 
@@ -88,8 +91,6 @@ public class ColliderBoxRenderer : MonoBehaviour{
     }
 
     void Draww(){
-
-		
 		if(!shapeProfile) return;
 
 		if(!myCollider || !sprRenderer || !sprController || !colliderRendererObj){
@@ -128,7 +129,20 @@ public class ColliderBoxRenderer : MonoBehaviour{
 
 		pts.Reverse();
 
-		if(pts.ToArray().GetHashCode() == myPoints.ToArray().GetHashCode()) return;
+		bool same = true;
+
+		if(pts.Count != myPoints.Count){
+			same = false;
+		}else{
+			for(int i=0; i<pts.Count; i++){
+				if(pts[i] != myPoints[i]){
+					same = false;
+					break;
+				}
+			}
+		}
+
+		if(same) return;
 
 		myPoints = pts;
 
@@ -140,9 +154,13 @@ public class ColliderBoxRenderer : MonoBehaviour{
 		sprController.spriteShape.fillOffset = fillAmount;
 
 		foreach(var pt in myPoints){
-			spline.InsertPointAt(spline.GetPointCount(), pt);
-			spline.SetTangentMode(spline.GetPointCount()-1, ShapeTangentMode.Linear);
-			spline.SetHeight(spline.GetPointCount()-1, lineThickness);
+			try{
+				spline.InsertPointAt(spline.GetPointCount(), pt);
+				spline.SetTangentMode(spline.GetPointCount()-1, ShapeTangentMode.Linear);
+				spline.SetHeight(spline.GetPointCount()-1, lineThickness);
+			}catch(Exception e){
+				Debug.LogError(e.StackTrace);
+			}
 		}
 		sprController.splineDetail = (int) QualityDetail.High;
 

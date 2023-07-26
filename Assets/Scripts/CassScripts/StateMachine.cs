@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 using SignalBusNS;
+using Serializables;
 
 namespace StateMachineNS{
-	/*
-		A state for the StateMachine so it can be read and used in a Graph data structure. While this can be visualised in a graph,
-		its better to sort the nodes as a list of them when they are too many
-
-		The details for a state are not important since they only have the connections to other states and their name
-	*/
+	/// <summary>
+	/// A state for the StateMachine so it can be read and used in a Graph data structure.
+	/// While this can be visualised in a graph, its better to sort the nodes as a list of them when they are too many.
+	/// The details for a state are not important since they only have the connections to other states and their name
+	/// </summary>
 	[Serializable]
 	public class State{
 		public string name;
@@ -41,30 +40,37 @@ namespace StateMachineNS{
 			return connectedStates.Remove(st);
 		}
 	}
-	/*
-		The graph of the States that manages transistions
-		This connects and transtions through states like a directional graph
-		allows for emiting signals to check for state changes so that the object with the machine can react in order
-	*/
+	/// <summary>
+		/// The graph of the States that manages transitions.
+		/// This connects and transitions through states like a directional graph.
+		/// It allows for emitting signals to check for state changes so that the object with the machine can react in order.
+	/// </summary>
 	[Serializable]
 	public class StateMachine{
 		public SignalBus signalBus = new SignalBus();
+
+		public static class Signals{
+			public const string 
+			StateCreate = "stateCreate",
+			StateDelete = "stateDelete",
+			StateConnect = "stateConnect",
+			StateDisconnect = "stateDisconnect",
+			StateChange = "stateChange";
+		}
 		protected Dictionary<string, State> states = new Dictionary<string, State>();
 		
-		protected Stack<string> stateStack = new Stack<string>();
-		[SerializeField]
-		protected string _current;
-		[SerializeField]
-		protected string _prev;
+		protected SerialList<string> stateStack = new SerialList<string>();
+		public string _current;
+		public string _prev;
 		private string _top{
 			get{
 				return GetNextStateName();
 			}
 		}
 
-		/*
-			Getter for the current state
-		*/
+		/// <summary>
+		/// Getter for the current state.
+		/// </summary>
 
 		public State CurrentState{
 			get{
@@ -74,6 +80,9 @@ namespace StateMachineNS{
 				return null;
 			}
 		}
+		/// <summary>
+		/// Getter for the previous state.
+		/// </summary>
 		public State PreviousState{
 			get{
 				if(HasState(_prev)){
@@ -83,21 +92,15 @@ namespace StateMachineNS{
 			}
 		}
 
-		/*
-			StateMachine constructor(s)
-		*/
+		/// <summary>
+		/// StateMachine Constructor
+		/// </summary>
 
 		public StateMachine(string curr = null){
 			if(curr!=null){
 				_current = curr;
 				states[_current] = new State(curr);
 			}
-
-			signalBus.CreateSignal("stateCreate");
-			signalBus.CreateSignal("stateDelete");
-			signalBus.CreateSignal("stateConnect");
-			signalBus.CreateSignal("stateDisconnect");
-			signalBus.CreateSignal("stateChange");
 		}
 
 		public StateMachine(State st = null){
@@ -105,26 +108,24 @@ namespace StateMachineNS{
 				_current = st.name;
 				states[_current] = st;
 			}
-
-			signalBus.CreateSignal("stateCreate");
-			signalBus.CreateSignal("stateDelete");
-			signalBus.CreateSignal("stateConnect");
-			signalBus.CreateSignal("stateDisconnect");
-			signalBus.CreateSignal("stateChange");
 		}
 
-		/*
-			Creates a new state when inside an object to initialise it
-		*/
+		/// <summary>
+		/// Creates a new state when inside an object to initialise it.
+		/// </summary>
 
 		public bool CreateState(string stateName){
+			if(stateName==null) return false;
 			if(HasState(stateName)) return false;
+
 			states[stateName] = new State(stateName);
 			
-			signalBus.Emit("stateCreate", states[stateName]);
+			signalBus.Emit(Signals.StateCreate, states[stateName]);
 			return true;
 		}
 		public bool CreateStates(string[] stateNames){
+			if(stateNames==null || stateNames.Length<=0) return false;
+
 			bool succ = true;
 			foreach(string st in stateNames){
 				bool x = CreateState(st);
@@ -132,45 +133,54 @@ namespace StateMachineNS{
 			}
 			return succ;
 		}
-		/*
-			Removes state from the statemachine
-		*/
+		/// <summary>
+		/// Removes state from the statemachine.
+		/// </summary>
 		public State DeleteState(string stateName){
 			if(!HasState(stateName)) return null;
+
 			State stateToDelete = states[stateName];
 
 			states.Remove(stateName);
 			
-			signalBus.Emit("stateDelete", stateToDelete);
+			signalBus.Emit(Signals.StateDelete, stateToDelete);
 			return stateToDelete;
 		}
 
-		/*
-			Checks if state exists in the machine by name
-		*/
+		/// <summary>
+		/// Checks if state exists in the machine by name
+		/// </summary>
 
 		public bool HasState(string stateName){
+			if(stateName==null) return false;
 			if(states.ContainsKey(stateName)) return true;
 			return false;
 		}
-		/*
-			Connects two states together so they can transition from each other (in direction from to)
-		*/
+		/// <summary>
+		/// Connects two states together so they can transition from each other (in direction from to)
+		/// </summary>
 		public bool ConnectState(string fromState, string toState){
 			if(!HasState(fromState) || !HasState(toState)) return false;
+
 			var stFrom = states[fromState];
 			var stTo = states[toState];
 			if(stFrom == null || stTo == null) return false;
 			
 			if(stFrom.ConnectState(stTo)){
-				signalBus.Emit("stateConnect", new Dictionary<string,object>(){
+				signalBus.Emit(Signals.StateConnect, new Dictionary<string,object>(){
 					{"from",stFrom}, {"to",stFrom},
 				});
 				return true;
 			}
 			return false;
 		}
+		/// <summary>
+		/// Connects one state to multiple other states
+		/// </summary>
 		public bool ConnectStates(string fromState, string[] toStates){
+			if(fromState==null) return false;
+			if(toStates==null || toStates.Length<=0) return false;
+
 			bool succ = true;
 			foreach(string st in toStates){
 				bool x = ConnectState(fromState, st);
@@ -178,6 +188,39 @@ namespace StateMachineNS{
 			}
 			return succ;
 		}
+		/// <summary>
+		/// Connects multiple states to one state
+		/// </summary>
+		public bool ConnectStates(string[] fromStates, string toState){
+			if(fromStates==null || fromStates.Length<=0) return false;
+			if(toState==null) return false;
+
+			bool succ = true;
+			foreach(string st in fromStates){
+				bool x = ConnectState(st, toState);
+				if(!x) succ = false;
+			}
+			return succ;
+		}
+		/// <summary>
+		/// Connects multiple states to multiple other states
+		/// </summary>
+		public bool ConnectStates(string[] fromStates, string[] toStates){
+			if(fromStates==null || fromStates.Length<=0) return false;
+			if(toStates==null || toStates.Length<=0) return false;
+
+			bool succ = true;
+			foreach(string _from in fromStates){
+				foreach(string _to in fromStates){
+					bool x = ConnectState(_from, _to);
+					if(!x) succ = false;
+				}
+			}
+			return succ;
+		}
+		/// <summary>
+		/// Connects all specified states to each other in both directions
+		/// </summary>
 		public bool InterConnectStates(string[] _states){
 			bool succ = true;
 			foreach(string stA in _states){
@@ -186,9 +229,9 @@ namespace StateMachineNS{
 			}
 			return succ;
 		}
-		/*
-			Removes connection between two states
-		*/
+		/// <summary>
+		/// Removes connection from one state to another
+		/// </summary>
 		public bool DisconnectState(string fromState, string toState){
 			if(!HasState(fromState) || !HasState(toState)) return false;
 			var stFrom = states[fromState];
@@ -196,13 +239,16 @@ namespace StateMachineNS{
 			if(stFrom == null || stTo == null) return false;
 			
 			if(stFrom.DisconnectState(stTo)){
-				signalBus.Emit("stateDisconnect", new Dictionary<string,object>(){
+				signalBus.Emit(Signals.StateDisconnect, new Dictionary<string,object>(){
 					{"from",stFrom}, {"to",stFrom},
 				});
 				return true;
 			}
 			return false;
 		}
+		/// <summary>
+		/// Removes connection from one state to multiple other states
+		/// </summary>
 		public bool DisconnectStates(string fromState, string[] toStates){
 			bool succ = true;
 			foreach(string st in toStates){
@@ -211,6 +257,9 @@ namespace StateMachineNS{
 			}
 			return succ;
 		}
+		/// <summary>
+		/// Removes both connections multiple states
+		/// </summary>
 		public bool InterDisconnectStates(string[] _states){
 			bool succ = true;
 			foreach(string stA in _states){
@@ -219,9 +268,9 @@ namespace StateMachineNS{
 			}
 			return succ;
 		}
-		/*
-			Switches from the current state to the new state, if it has a connection
-		*/
+		/// <summary>
+		/// Switches from the current state to the new state, if it has a connection
+		/// </summary>
 		public bool SwitchToState(string stateName){
 			if(!HasState(stateName)) return false;
 
@@ -232,26 +281,32 @@ namespace StateMachineNS{
 				_current = newState.name;
 				_prev = (oldState!=null ? oldState.name : null);
 
-				signalBus.Emit("stateChange", new Dictionary<string, object>(){
+				signalBus.Emit(Signals.StateChange, new Dictionary<string, object>(){
 					{"old",oldState}, {"new",newState},
 				});
 				return true;
 			}
 			return false;
 		}
-		/*
-			Switches to the last state it was on
-		*/
+		/// <summary>
+		/// Switches to the last state it was on
+		/// </summary>
 		public bool SwitchToPreviousState(){
 			return SwitchToState(_prev);
 		}
 
+		/// <summary>
+		/// Checks if machine can switch to state from current state
+		/// </summary>
 		public bool CanSwitchTo(string stateName){
 			if(!HasState(stateName) || CurrentState==null) return false;
 			State st = states[stateName];
 
 			return CurrentState.IsConnectedTo(st);
 		}
+		/// <summary>
+		/// Switches from current state to next state in the next state stack. This will pop from the state always for each attempt to switch to that state
+		/// </summary>
 
 		public bool SwitchToNextStateInStack(){
 			string nextState;
@@ -260,7 +315,9 @@ namespace StateMachineNS{
 			if(nextState!=null) return SwitchToState(nextState);
 			return false;
 		}
-
+		/// <summary>
+		/// Pushes a state into the next state stack
+		/// </summary>
 		public void PushToStack(string stateName){
 			if(HasState(stateName)){
 				stateStack.Push(stateName);
