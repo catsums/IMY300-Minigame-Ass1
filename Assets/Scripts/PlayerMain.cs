@@ -13,13 +13,22 @@ using GameObjectExt;
 public class PlayerMain : MonoBehaviour
 {
 	public int hp = 3;
+	public bool alive = true;
 	public PlayerInputCtrl InputCtrl;
 	public PlayerMoveCtrl MoveCtrl;
 
 	public Collider2D hitBox;
 
+	public SpriteRenderer renderer;
 	public Animator animator;
 	public SignalBus signalBus = new SignalBus();
+
+	public TimerManager timer;
+
+	public float hurtTime = 1f;
+	public float afterHurtTime = 3f;
+
+	public string state = "run";
 	void Awake() {
 		
 	}
@@ -43,11 +52,26 @@ public class PlayerMain : MonoBehaviour
 		if(!animator){
 			animator = GetComponentInChildren<Animator>();
 		}
+		if(!renderer){
+			renderer = GetComponentInChildren<SpriteRenderer>();
+		}
 	}
 
 	void FixedUpdate()
 	{
-		
+		if(!alive) return;
+
+		switch(state){
+			case "hurt":
+				animator.Play("PlayerHurt"); break;
+			case "dash":
+				animator.Play("PlayerDash"); break;
+			case "run":
+				animator.Play("PlayerDash"); break;
+			case "idle":
+			default:
+				animator.Play("PlayerIdle"); break;
+		}
 	}
 
 	void OnDetectCollisionEnter(Collider2D coll){
@@ -62,7 +86,21 @@ public class PlayerMain : MonoBehaviour
 	void TakeDamage(){
 		if(hp > 0){
 			hp--;
+			state = "hurt";
+			hitBox.enabled = false;
+			timer.SetTimeout(()=>{
+				var col = renderer.color;
+				col.a = 0.5f;
+				timer.SetTimeout(()=>{
+					state = "run";
+					hitBox.enabled = true;
+					col.a = 1f;
+				}, afterHurtTime);
+			}, hurtTime);
 		}else{
+			state = "dead";
+			animator.Play("PlayerDead");
+			alive = false;
 			hitBox.enabled = false;
 		}
 	}
