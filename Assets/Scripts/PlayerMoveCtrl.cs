@@ -41,10 +41,9 @@ public class PlayerMoveCtrl : MonoBehaviour
         if(moveInput!=null && moveInput.IsJustPressed()){
 			inputDir = moveInput.Get<Vector2>();
 			TryMove(inputDir);
-			playerMain.animator.Play("Dash");
+			playerMain.state = "dash";
 		}else{
 			inputDir = Vector2.zero;
-			playerMain.animator.Play("PlayerRun");
 		}
     }
 
@@ -79,9 +78,9 @@ public class PlayerMoveCtrl : MonoBehaviour
 
 		var x = LeanTween.move(kinematicBody.gameObject, newPosition, moveTime);
 		
-		// x.setOnComplete(()=>{
-		// 	print("milk");
-		// });
+		x.setOnComplete(()=>{
+			playerMain.state = "run";
+		});
 		// LeanTween.addListener()
 
 		// kinematicBody.MovePosition(newPosition);

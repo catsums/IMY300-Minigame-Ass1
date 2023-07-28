@@ -33,10 +33,10 @@ public class PlayerMain : MonoBehaviour
 		
 	}
 	void Start(){
-		var timerComp = GetComponent<TimerComp>();
-		timerComp.signalBus.Subscribe("timeout", (x)=>{
-			print("meow");
-		});
+		// var timerComp = GetComponent<TimerComp>();
+		// timerComp.signalBus.Subscribe("timeout", (x)=>{
+		// 	print("meow");
+		// });
 
 		if(!InputCtrl){
 			InputCtrl = GetComponent<PlayerInputCtrl>();
@@ -55,6 +55,10 @@ public class PlayerMain : MonoBehaviour
 		if(!renderer){
 			renderer = GetComponentInChildren<SpriteRenderer>();
 		}
+		if(!timer){
+			timer = GetComponentInChildren<TimerManager>();
+		}
+		
 	}
 
 	void FixedUpdate()
@@ -63,11 +67,15 @@ public class PlayerMain : MonoBehaviour
 
 		switch(state){
 			case "hurt":
-				animator.Play("PlayerHurt"); break;
+				animator.Play("PlayerHurt");
+				// print("Milk");
+				break;
 			case "dash":
-				animator.Play("PlayerDash"); break;
+				animator.Play("PlayerDash");
+				break;
 			case "run":
-				animator.Play("PlayerDash"); break;
+				animator.Play("PlayerRun");
+				break;
 			case "idle":
 			default:
 				animator.Play("PlayerIdle"); break;
@@ -91,19 +99,22 @@ public class PlayerMain : MonoBehaviour
 			timer.SetTimeout(()=>{
 				var col = renderer.color;
 				col.a = 0.5f;
+				state = "run";
 				timer.SetTimeout(()=>{
-					state = "run";
 					hitBox.enabled = true;
 					col.a = 1f;
 				}, afterHurtTime);
 			}, hurtTime);
 		}else{
-			state = "dead";
-			animator.Play("PlayerDead");
-			alive = false;
-			hitBox.enabled = false;
+			DoDie();
 		}
 	}
 
+	void DoDie(){
+		state = "dead";
+		alive = false;
+		hitBox.enabled = false;
+		animator.Play("PlayerDead");
+	}
 	
 }
