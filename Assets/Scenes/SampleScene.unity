@@ -4738,10 +4738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80250d4faaf81040ac5331bc5c72b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   direction: {x: -1, y: 0}
   templateBullet: {fileID: 1078053941}
-  spawnTime: 5
+  spawnTime: 2
 --- !u!1 &1179398129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5023,6 +5023,7 @@ GameObject:
   - component: {fileID: 1247669890}
   - component: {fileID: 1247669891}
   - component: {fileID: 1247669893}
+  - component: {fileID: 1247669894}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5090,9 +5091,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
+  alive: 1
   InputCtrl: {fileID: 1247669889}
   MoveCtrl: {fileID: 1247669892}
   hitBox: {fileID: 1062556066}
+  renderer: {fileID: 1898665346}
+  animator: {fileID: 1247669891}
+  timer: {fileID: 1247669894}
+  hurtTime: 1
+  afterHurtTime: 3
+  state: run
 --- !u!114 &1247669889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,7 +5130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247669885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79098ed5ea7023b41af1d0038cf08bf0, type: 3}
   m_Name: 
@@ -5167,7 +5175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMain: {fileID: 1247669888}
-  kinematicBody: {fileID: 0}
+  kinematicBody: {fileID: 1247669893}
   inputDir: {x: 0, y: 0}
   moveDir: {x: 0, y: 0}
   cellPos: {x: 1, y: 1}
@@ -5193,6 +5201,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1247669894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247669885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654aaf8ee86facd428c5259e2a1525ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1347423794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6974,7 +6994,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1362657406, guid: d5eaa790e0d33104db49ac9e7ea9446e, type: 3}
-  m_Color: {r: 0.7861761, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.80053914, g: 0.9339623, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
