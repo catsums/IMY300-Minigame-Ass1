@@ -136,7 +136,7 @@ MonoBehaviour:
   - despawner
   priority: 0
   isEnabled: 1
-  checkCollisionsOnUpdate: 0
+  checkCollisionsOnUpdate: 1
   canDetectNormalCollider: 1
   useDepthDetection: 0
   depth: 1

@@ -36,6 +36,7 @@ public class PlanetSpawner : MonoBehaviour
 		var template = MY.RandomArrayItem(templateObjects);
 
 		var size = Random.Range(sizeRange.x, sizeRange.y);
+		var speed = Random.Range(speedRange.x, speedRange.y);
 		var yPos = Random.Range(yRange.x, yRange.y);
 
 		var obj = Instantiate(template);
@@ -51,6 +52,11 @@ public class PlanetSpawner : MonoBehaviour
 
 		obj.transform.localScale = scale;
 		obj.transform.position = pos;
+
+		var planet = obj.GetComponent<MovingPlanet>();
+
+		planet.speed = speed;
+		planet.moveDir = direction;
 
 		obj.SetActive(true);
 
