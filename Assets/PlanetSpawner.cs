@@ -13,6 +13,9 @@ public class PlanetSpawner : MonoBehaviour
 
 	public Vector2 speedRange = Vector2.right;
 	public Vector2 spawnTime = Vector2.right;
+
+	public Vector2 sizeRange = Vector2.right;
+	public Vector2 yRange = new Vector2(-50,50);
     void Start()
     {
 		print($"EGGS");
@@ -30,20 +33,24 @@ public class PlanetSpawner : MonoBehaviour
 
 	void SpawnPlanet(){
 
-		var obj = MY.RandomArrayItem(templateObjects);
+		var template = MY.RandomArrayItem(templateObjects);
+
+		var size = Random.Range(sizeRange.x, sizeRange.y);
+		var yPos = Random.Range(yRange.x, yRange.y);
+
+		var obj = Instantiate(template);
 		
-		// obj.SetActive(false);
-		// obj.transform.SetParent(transform);
+		
+		obj.SetActive(false);
+		obj.transform.SetParent(transform);
 
-		// var index = UnityEngine.Random.Range(0, GameGrid.CellSpecs.y);
+		var pos = obj.transform.position;
+		var scale = obj.transform.localScale;
+		pos.y = yPos;
+		scale = (Vector2.one * size);
 
-		// print($"index: {index}");
+		
 
-		// var gridCell = GameGrid.GetCell(index, 0);
-		// var pos = obj.transform.position;
-		// pos.y = gridCell.tileObject.transform.position.y;
-		// pos.x = transform.position.x;
-		// pos.z = transform.position.z + index;
 
 		// obj.transform.position = pos;
 
