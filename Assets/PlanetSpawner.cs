@@ -16,6 +16,8 @@ public class PlanetSpawner : MonoBehaviour
 
 	public Vector2 sizeRange = Vector2.right;
 	public Vector2 yRange = new Vector2(-50,50);
+
+	public Color[] colors = new Color[]{ Color.white };
     void Start()
     {
 		print($"EGGS");
@@ -54,7 +56,7 @@ public class PlanetSpawner : MonoBehaviour
 		var scale = obj.transform.localScale;
 		pos.y = yPos;
 		pos.x = transform.position.x;
-		pos.z = size;
+		pos.z = transform.position.z + size;
 		scale = (Vector2.one * size);
 
 		obj.transform.localScale = scale;
@@ -64,6 +66,11 @@ public class PlanetSpawner : MonoBehaviour
 
 		planet.speed = speed;
 		planet.moveDir = direction;
+
+		var spr = planet.GetComponentInChildren<SpriteRenderer>();
+		var col1 = colors[Random.Range(0,colors.Length)];
+		var col2 = colors[Random.Range(0,colors.Length)];
+		spr.color = Color.Lerp(col1, col2, Random.Range(0,1));
 
 		obj.SetActive(true);
 
