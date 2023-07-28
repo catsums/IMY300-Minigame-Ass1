@@ -23,7 +23,7 @@ public class PlanetSpawner : MonoBehaviour
     	timer = GameManager.Inst.Timer.SetInterval(()=>{
 
 			print($"X");
-			
+
 			SpawnPlanet();
 			timer.waitTime = Random.Range(spawnTime.x, spawnTime.y);
 
@@ -53,6 +53,8 @@ public class PlanetSpawner : MonoBehaviour
 		var pos = obj.transform.position;
 		var scale = obj.transform.localScale;
 		pos.y = yPos;
+		pos.x = transform.position.x;
+		pos.z = size;
 		scale = (Vector2.one * size);
 
 		obj.transform.localScale = scale;
