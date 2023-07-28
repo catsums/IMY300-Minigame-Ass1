@@ -56,7 +56,7 @@ public class PlanetSpawner : MonoBehaviour
 		var scale = obj.transform.localScale;
 		pos.y = yPos;
 		pos.x = transform.position.x;
-		pos.z = transform.position.z + size;
+		pos.z = transform.position.z - size;
 		scale = (Vector2.one * size);
 
 		obj.transform.localScale = scale;
@@ -70,8 +70,9 @@ public class PlanetSpawner : MonoBehaviour
 		var sprs = planet.GetComponentsInChildren<SpriteRenderer>();
 		var col1 = colors[Random.Range(0,colors.Length)];
 		var col2 = colors[Random.Range(0,colors.Length)];
+		var col = Color.Lerp(col1, col2, Random.Range(0,1));
 		foreach(var spr in sprs){
-			spr.color *= Color.Lerp(col1, col2, Random.Range(0,1));
+			spr.color = Color.Lerp(spr.color, col, Random.Range(0.5f,1));
 		}
 
 		obj.SetActive(true);
