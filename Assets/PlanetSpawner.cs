@@ -64,13 +64,15 @@ public class PlanetSpawner : MonoBehaviour
 
 		var planet = obj.GetComponent<MovingPlanet>();
 
-		planet.speed = speed;
+		planet.speed = speed * size;
 		planet.moveDir = direction;
 
-		var spr = planet.GetComponentInChildren<SpriteRenderer>();
+		var sprs = planet.GetComponentsInChildren<SpriteRenderer>();
 		var col1 = colors[Random.Range(0,colors.Length)];
 		var col2 = colors[Random.Range(0,colors.Length)];
-		spr.color = Color.Lerp(col1, col2, Random.Range(0,1));
+		foreach(var spr in sprs){
+			spr.color *= Color.Lerp(col1, col2, Random.Range(0,1));
+		}
 
 		obj.SetActive(true);
 
