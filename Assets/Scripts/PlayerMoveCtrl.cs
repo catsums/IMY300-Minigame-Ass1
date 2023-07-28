@@ -38,12 +38,16 @@ public class PlayerMoveCtrl : MonoBehaviour
     void Update(){
 		var moveInput = playerMain.InputCtrl.GetInputAction("Move");
 
-        if(moveInput!=null && moveInput.IsJustPressed()){
-			inputDir = moveInput.Get<Vector2>();
-			TryMove(inputDir);
-			playerMain.state = "dash";
-		}else{
-			inputDir = Vector2.zero;
+		if(playerMain.alive && 
+			(playerMain.state=="run" || playerMain.state == "dash")
+		){
+			if(moveInput!=null && moveInput.IsJustPressed()){
+				inputDir = moveInput.Get<Vector2>();
+				TryMove(inputDir);
+				playerMain.state = "dash";
+			}else{
+				inputDir = Vector2.zero;
+			}
 		}
     }
 

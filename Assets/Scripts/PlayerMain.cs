@@ -96,9 +96,9 @@ public class PlayerMain : MonoBehaviour
 			hp--;
 			state = "hurt";
 			hitBox.enabled = false;
+			var col = renderer.color;
+			col.a = 0.4f;
 			timer.SetTimeout(()=>{
-				var col = renderer.color;
-				col.a = 0.5f;
 				state = "run";
 				timer.SetTimeout(()=>{
 					hitBox.enabled = true;
