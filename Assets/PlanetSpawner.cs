@@ -49,7 +49,10 @@ public class PlanetSpawner : MonoBehaviour
 		pos.y = yPos;
 		scale = (Vector2.one * size);
 
-		
+		obj.transform.localScale = scale;
+		obj.transform.position = pos;
+
+		obj.SetActive(true);
 
 
 		// obj.transform.position = pos;

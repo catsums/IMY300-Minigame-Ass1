@@ -78,6 +78,7 @@ MonoBehaviour:
   collisionTargets:
   - player
   - bulletDespawner
+  - despawner
   priority: 0
   isEnabled: 1
   checkCollisionsOnUpdate: 1

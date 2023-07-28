@@ -35,7 +35,7 @@ public class PlayerMoveCtrl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate(){
+    void Update(){
 		var moveInput = playerMain.InputCtrl.GetInputAction("Move");
 
         if(moveInput!=null && moveInput.IsJustPressed()){
@@ -73,10 +73,10 @@ public class PlayerMoveCtrl : MonoBehaviour
 
 		kinematicBody.transform.position = initPosition;
 
-		var moveTime = (1/(Mathf.Abs(moveSpeed)+0.001f)) * Time.fixedDeltaTime;
-
+		var moveTime = (1/(Mathf.Abs(moveSpeed)+0.001f)) * Time.deltaTime;
 
 		var x = LeanTween.move(kinematicBody.gameObject, newPosition, moveTime);
+		
 		// x.setOnComplete(()=>{
 		// 	print("milk");
 		// });

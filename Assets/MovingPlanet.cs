@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackBullet : MonoBehaviour
+public class MovingPlanet : MonoBehaviour
 {
 	public float speed = 1f;
 	public Collider2D hitBox;
 
-	public Vector2 moveDir;
+	public Vector2 moveDir = Vector2.left;
 
 	Rigidbody2D rigidbody;
     // Start is called before the first frame update
@@ -17,17 +17,6 @@ public class AttackBullet : MonoBehaviour
         if(!hitBox) hitBox = GetComponent<Collider2D>();
 		var hitBoxComp = hitBox.GetComponent<ColliderLayerComp>();
 		if(hitBoxComp) hitBoxComp.OnDetectCollisionEnter(OnDetectCollisionEnter);
-		// if(hitBoxComp){
-		// 	hitBoxComp.OnDetectCollisionEnter((x)=>{
-		// 		print("Enter!!");
-		// 	});
-		// 	hitBoxComp.OnDetectCollisionStep((x)=>{
-		// 		print(message: "Step!!");
-		// 	});
-		// 	hitBoxComp.OnDetectCollisionExit((x)=>{
-		// 		print("Exit!!");
-		// 	});
-		// }
 		rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -35,7 +24,6 @@ public class AttackBullet : MonoBehaviour
     void FixedUpdate()
     {
         MoveBullet(moveDir, Time.fixedDeltaTime);
-		
     }
 
 	void MoveBullet(Vector2 moveDir, float delta){
@@ -44,7 +32,6 @@ public class AttackBullet : MonoBehaviour
 		var dist = (speed * delta);
 		Vector2 currPos = transform.position;
 
-		// rigidbody.MovePosition(currPos + (dist * moveDir));
 		var x = LeanTween.move(rigidbody.gameObject, currPos + (dist * moveDir), delta);
 		var collComp = hitBox.GetComponent<ColliderLayerComp>();
 		// LeanTween.add()
@@ -58,12 +45,8 @@ public class AttackBullet : MonoBehaviour
 			collComp.depthStart += (dist * moveDir.y);
 		});
 
-		// var collComp = hitBox.GetComponent<ColliderLayerComp>();
-		// collComp.depthStart += (dist * moveDir.y);
 	}
-
 	void OnDetectCollisionEnter(Collider2D coll){
-		print("E");
 		var collComp = coll.GetComponent<ColliderLayerComp>();
 		if(!collComp) return;
 
