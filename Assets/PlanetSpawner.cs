@@ -19,9 +19,14 @@ public class PlanetSpawner : MonoBehaviour
     void Start()
     {
 		print($"EGGS");
-        GameManager.Inst.Timer.SetInterval(()=>{
+		TimerManager.TimerInstance timer = null;
+    	timer = GameManager.Inst.Timer.SetInterval(()=>{
+
 			print($"X");
+			
 			SpawnPlanet();
+			timer.waitTime = Random.Range(spawnTime.x, spawnTime.y);
+
 		}, Random.Range(spawnTime.x, spawnTime.y));
     }
 
@@ -32,8 +37,8 @@ public class PlanetSpawner : MonoBehaviour
     }
 
 	void SpawnPlanet(){
-
-		var template = MY.RandomArrayItem(templateObjects);
+		
+		var template = templateObjects[Random.Range(0, templateObjects.Count)];
 
 		var size = Random.Range(sizeRange.x, sizeRange.y);
 		var speed = Random.Range(speedRange.x, speedRange.y);

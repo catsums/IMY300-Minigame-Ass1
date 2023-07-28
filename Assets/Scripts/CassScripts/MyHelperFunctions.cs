@@ -171,7 +171,7 @@ namespace MyHelperFunctions
 		}
 
 		public static T RandomArrayItem<T>(T[] arr){
-			int index = RandomInt(arr.Length);
+			int index = RandomInt(arr.Length-1);
 			return arr[index];
 		}
 		public static T RandomArrayItem<T>(IEnumerable<T> arr){
