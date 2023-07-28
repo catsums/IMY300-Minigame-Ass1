@@ -1,0 +1,1424 @@
+fileFormatVersion: 2
+guid: 66f868b43eff13549b02204b7e7286b6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0f9bd2681558141b5c83ce0efd57f1
+      internalID: -130025842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426c7a994ceff4b4eafb759316a7a38e
+      internalID: -540593913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f0274d063e5e749aec639fe67056c0
+      internalID: -446870835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc63686afce840340ba7c5701563987f
+      internalID: -197224297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0129073f5a16924dbf43f60c4ebb450
+      internalID: 1399882628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bb105a151a8c845aa5d55871add987
+      internalID: -1686844220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2645c37a1ec01b34ea0c422de1813209
+      internalID: 410381091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb59c3a7fa0f63742877a8982cda7e41
+      internalID: -1424266668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 577.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814e8a426039a6e4d8cc4853f19fc87f
+      internalID: 586745392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595279eef9a3b604dbbbf7671d91be80
+      internalID: -846280354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690b37935d181c74780915c736418a53
+      internalID: -1807179957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ff0b6468fd06e458fe14ca16c54aa8
+      internalID: 230555622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f65ea0a84531844a9a96b8baba9b1b
+      internalID: -1665290126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3f8970cdea62940b2c946745ab645e
+      internalID: -1770386459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abe86ab9646f9e4c8cba44e18c0ed02
+      internalID: 643723157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_15
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3499423c4abf0014f9423e20e6e1ff3c
+      internalID: 1862116982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_16
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 481.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb00a8a87606a894c97b6358fcaa6cfc
+      internalID: -1024612840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6371f920a6bb041b9c32c25cca4c8c
+      internalID: -383409901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1711545612d26ab48be2d9ab4cdce21e
+      internalID: -2051110144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9718a634c24c564ca985e4de6744632
+      internalID: -721749148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_20
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061122edbac98564e93a31c61e1f958d
+      internalID: 443448316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afab797a6d3ea06409d0cf0ac171f28c
+      internalID: 2061297576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb86b3a30b6508745aeaefd66c31e248
+      internalID: -848533668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_23
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ff50d05d00daf4987d8c86d930cb8a
+      internalID: -2079427094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_24
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9a66225ad5d3845a47e76e2ba30ca7
+      internalID: 720649463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_25
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 385.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0a9d70bf272a24ea800fae6c11e2cd
+      internalID: 160954960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c619c8cc8069874492cd228b661239f
+      internalID: -2133909589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9692d835f0db3d146a1522f77e71e9ad
+      internalID: -1477849149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8842110b513e6408e9eab7c5f63b30
+      internalID: 971998166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_29
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcce658c27a146047842cbd29e01ae79
+      internalID: -425405167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_30
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afccce3450de7d74693984ec091ad11a
+      internalID: -443682903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_31
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f1ba6a49fdddb4c841895784941e63
+      internalID: 987643480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_32
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7725dca6947859d4e96d2d7461103421
+      internalID: -2017638046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_33
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c83c4a6b8cb364b84bd647a7e955ce
+      internalID: 311324927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_34
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 289.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1bb6322b4044e4f8dbfcf59366699f
+      internalID: -1422006006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e743324aed95074ebbffb9fbd711c00
+      internalID: -1607825937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f95d53b0ff21d4e8b630a95b860a26
+      internalID: -1283343280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_37
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda178fdc1fa19743b776026ce812f0c
+      internalID: 922235420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_38
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13c8784ea79d4d4cb0d02f9f4eda59e
+      internalID: 82897249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_39
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da04f0590f1b28e49ab0152007fcd19f
+      internalID: 2107772588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_40
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ff84522df044d40839b5d44066d2ea
+      internalID: -937279281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_41
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf9115352410ee4ca25b02ce06b76f9
+      internalID: 49633364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_42
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f0221ff24aa474ebe2457b359d5085
+      internalID: 1948718623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_43
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 193.7143
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb91f22d13e42145a1dc337470335a0
+      internalID: 262833370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21131add505ab1488ca0214b1faf91a
+      internalID: 1483994020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57ec2ca33f86eb48a56a89c8e9ba4f6
+      internalID: 1320873769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_46
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac3a7a0651404149835c5342d516384
+      internalID: 94110503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_47
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3e66074bbefd4489f657f7d5b6e445
+      internalID: 1292998123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_48
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d07f93c14b1ac946bd17687cd34e932
+      internalID: 564108934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_49
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f18e0242d942fa42b7d5790d9c7b986
+      internalID: -1091188193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_50
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012904e11e81af240bdc8136a8f17525
+      internalID: -488564509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_51
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529b43bd5e1364745a35286c3883e8db
+      internalID: -580854050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_52
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 97.71429
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ba2f59f71f5f746a42558cd24ae7b0
+      internalID: 540598648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.7142868
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085277a15d767114285546a60c647cac
+      internalID: -596027273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_54
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1.7142868
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53cee0c420d0dd45b1671ea31370e88
+      internalID: -835686640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_55
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1.7142868
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbdc78010a3aa1d498b10a7df013cbe3
+      internalID: 1630913139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_56
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1.7142868
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729e5f69db92fac49916f10592ceff88
+      internalID: 2059673602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_57
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1.7142868
+        width: 96.333336
+        height: 96.28571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37583762f60612e48b2b5646d083a5d9
+      internalID: -1539358739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_58
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2
+        width: 194
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5e57d0c7f90d249b8bf54841fa731c
+      internalID: 1221150055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_0: -130025842
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_1: -540593913
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_10: -1807179957
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_11: 230555622
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_12: -1665290126
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_13: -1770386459
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_14: 643723157
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_15: 1862116982
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_16: -1024612840
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_17: -383409901
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_18: -2051110144
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_19: -721749148
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_2: -446870835
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_20: 443448316
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_21: 2061297576
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_22: -848533668
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_23: -2079427094
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_24: 720649463
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_25: 160954960
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_26: -2133909589
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_27: -1477849149
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_28: 971998166
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_29: -425405167
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_3: -197224297
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_30: -443682903
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_31: 987643480
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_32: -2017638046
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_33: 311324927
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_34: -1422006006
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_35: -1607825937
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_36: -1283343280
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_37: 922235420
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_38: 82897249
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_39: 2107772588
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_4: 1399882628
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_40: -937279281
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_41: 49633364
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_42: 1948718623
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_43: 262833370
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_44: 1483994020
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_45: 1320873769
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_46: 94110503
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_47: 1292998123
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_48: 564108934
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_49: -1091188193
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_5: -1686844220
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_50: -488564509
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_51: -580854050
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_52: 540598648
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_53: -596027273
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_54: -835686640
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_55: 1630913139
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_56: 2059673602
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_57: -1539358739
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_58: 1221150055
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_59: -2082922832
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_6: 410381091
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_60: -1775439860
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_61: 573694261
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_7: -1424266668
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_8: 586745392
+      Introl Yellow Effect Bullet Impact Explosion 32x32-veed-remove-background_9: -846280354
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

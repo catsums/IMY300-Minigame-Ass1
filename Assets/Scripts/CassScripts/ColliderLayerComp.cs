@@ -140,11 +140,13 @@ public class ColliderLayerComp : MonoBehaviour
 
 	void ReviseLayers(){
 		foreach(string layer in collisionLayers){
+			if(layer==null) continue;
 			if(!collLayers.ContainsKey(layer)){
 				collLayers[layer] = true;
 			}
 		}
 		foreach (string layer in collisionTargets){
+			if(layer==null) continue;
 			if(!collTargets.ContainsKey(layer)){
 				collTargets[layer] = true;
 			}
@@ -152,6 +154,7 @@ public class ColliderLayerComp : MonoBehaviour
 
 		var _layers = collLayers.Keys.ToArray();
 		foreach(string layer in _layers){
+			if(layer==null) continue;
 			if(!collisionLayers.Contains(layer)){
 				collLayers[layer] = false;
 			}
@@ -159,6 +162,7 @@ public class ColliderLayerComp : MonoBehaviour
 
 		var _targets = collTargets.Keys.ToArray();
 		foreach(string layer in _targets){
+			if(layer==null) continue;
 			if(!collisionTargets.Contains(layer)){
 				collTargets[layer] = false;
 			}
@@ -190,39 +194,39 @@ public class ColliderLayerComp : MonoBehaviour
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if(!checkCollisionsOnUpdate) return;
-		if(!other.collider || !DetectCollision(other?.collider)) return;
+		// if(!checkCollisionsOnUpdate) return;
+		if(!DetectCollision(other?.collider)) return;
 
 		signalBus.Emit(Signals.CollisionEnter, other.collider);
 	}
 	void OnCollisionStay2D(Collision2D other){
-		if(!checkCollisionsOnUpdate) return;
-		if(!other.collider || !DetectCollision(other?.collider)) return;
+		// if(!checkCollisionsOnUpdate) return;
+		if(!DetectCollision(other?.collider)) return;
 
 		signalBus.Emit(Signals.CollisionStep, other.collider);
 	}
 	void OnCollisionExit2D(Collision2D other){
-		if(!checkCollisionsOnUpdate) return;
-		if(!other.collider || !DetectCollision(other?.collider)) return;
+		// if(!checkCollisionsOnUpdate) return;
+		if(!DetectCollision(other?.collider)) return;
 
 		signalBus.Emit(Signals.CollisionExit, other.collider);
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		if(!checkCollisionsOnUpdate) return;
-		if(!collider || !DetectCollision(collider)) return;
+		// if(!checkCollisionsOnUpdate) return;
+		if(!DetectCollision(collider)) return;
 
 		signalBus.Emit(Signals.TriggerEnter, collider);
 	}
 	void OnTriggerStay2D(Collider2D collider){
-		if(!checkCollisionsOnUpdate) return;
-		if(!collider || !DetectCollision(collider)) return;
+		// if(!checkCollisionsOnUpdate) return;
+		if(!DetectCollision(collider)) return;
 
 		signalBus.Emit(Signals.TriggerStep, collider);
 	}
 	void OnTriggerExit2D(Collider2D collider){
-		if(!checkCollisionsOnUpdate) return;
-		if(!collider || !DetectCollision(collider)) return;
+		// if(!checkCollisionsOnUpdate) return;
+		if(!DetectCollision(collider)) return;
 
 		signalBus.Emit(Signals.TriggerExit, collider);
 	}
@@ -237,36 +241,42 @@ public class ColliderLayerComp : MonoBehaviour
 	void FixedUpdate(){
 		// if(!Application.isPlaying || !runInEditor) return;
 
-		// if(checkCollisionsOnUpdate){
-		// 	CheckForCollisions();
-		// 	CheckCollisionCache();
-		// }
+		if(checkCollisionsOnUpdate){
+			CheckForCollisions();
+			CheckCollisionCache();
+		}
 	}
 
-	// List<Collider2D> colliderCache = new List<Collider2D>();
+	List<Collider2D> colliderCache = new List<Collider2D>();
 
-	// void CheckForCollisions(){
-	// 	ForEachCurrentCollisions((coll, collComp)=>{
-	// 		if(colliderCache.Contains(coll)) return;
+	void CheckForCollisions(){
+		ForEachCurrentCollisions((coll, collComp)=>{
+			if(colliderCache.Contains(coll)) return;
 			
-	// 		colliderCache.Add(coll);
+			colliderCache.Add(coll);
 
-	// 		signalBus.Emit(Signals.CollisionEnter, coll);
+			signalBus.Emit(Signals.CollisionEnter, coll);
 
-	// 	});
-	// }
-	// void CheckCollisionCache(){
-	// 	Collider2D[] cache = colliderCache.ToArray();
-	// 	foreach(var coll in cache){
-	// 		if(!DetectCollision(coll)){
-	// 			colliderCache.Remove(coll);
+		});
+	}
+	void CheckCollisionCache(){
+		Collider2D[] cache = colliderCache.ToArray();
+		var currColls = GetCurrentCollisions();
+		foreach(var coll in cache){
+			if(currColls.Contains(coll)){
+				signalBus.Emit(Signals.CollisionStep, coll);
+			}else{
+				colliderCache.Remove(coll);
+				signalBus.Emit(Signals.CollisionExit, coll);
+			}
+			// if(!DetectCollision(coll)){
+			// 	colliderCache.Remove(coll);
 
-	// 			signalBus.Emit(Signals.CollisionExit, coll);
-	// 		}else{
-	// 			signalBus.Emit(Signals.CollisionStep, coll);
-	// 		}
-	// 	}
-	// }
+			// 	signalBus.Emit(Signals.CollisionExit, coll);
+			// }else{
+			// }
+		}
+	}
 
 	/// <summary>
 	/// Casts the collider in a certain direction and distance but uses the collider comp to filter
@@ -340,7 +350,10 @@ public class ColliderLayerComp : MonoBehaviour
 		List<Collider2D> colls = new List<Collider2D>();
 		ContactFilter2D filter = default(ContactFilter2D);
 
-		selectedCollider?.OverlapCollider(filter,initColls);
+		if(selectedCollider){
+			selectedCollider.OverlapCollider(filter,initColls);
+		}
+
 		foreach(var coll in initColls){
 			if(this.DetectCollision(coll)){
 				colls.Add(coll);

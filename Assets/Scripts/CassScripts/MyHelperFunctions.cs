@@ -174,6 +174,9 @@ namespace MyHelperFunctions
 			int index = RandomInt(arr.Length);
 			return arr[index];
 		}
+		public static T RandomArrayItem<T>(IEnumerable<T> arr){
+			return RandomArrayItem(arr?.ToArray());
+		}
 
 		public static int RandomInt(int max, bool inclusive=false){
    			Random random = new Random();

@@ -10,10 +10,23 @@ namespace Serializables{
 	public class SerialList<T> : List<T>{
 		public T[] elements = new T[0];
 
+		protected static int MOD(int a, int b){
+			return ((a % b) + b) % b;
+		}
+		protected static float MOD(float a, float b){
+			return ((a % b) + b) % b;
+		}
+
 		public new T this[int i]{
 			get {
+				if(i<0){
+					i = MOD(i, Count);
+				}
 				return elements[i];
-			}set { 
+			}set{
+				if(i<0){
+					i = MOD(i, Count);
+				}
 				elements[i] = value;
 			}
 		}
@@ -268,10 +281,10 @@ namespace Serializables{
 		}
 		#nullable enable
 		public T? Peek(){
-			return elements[Count];
+			return elements[Count-1];
 		}
 		public T? PeekLast(){
-			return elements[Count];
+			return elements[Count-1];
 		}
 		public T? PeekFirst(){
 			return elements[0];
