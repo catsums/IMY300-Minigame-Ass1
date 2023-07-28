@@ -41,8 +41,10 @@ public class PlayerMoveCtrl : MonoBehaviour
         if(moveInput!=null && moveInput.IsJustPressed()){
 			inputDir = moveInput.Get<Vector2>();
 			TryMove(inputDir);
+			playerMain.animator.Play("Dash");
 		}else{
 			inputDir = Vector2.zero;
+			playerMain.animator.Play("PlayerRun");
 		}
     }
 

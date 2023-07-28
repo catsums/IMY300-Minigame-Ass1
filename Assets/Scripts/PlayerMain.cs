@@ -17,6 +17,8 @@ public class PlayerMain : MonoBehaviour
 	public PlayerMoveCtrl MoveCtrl;
 
 	public Collider2D hitBox;
+
+	public Animator animator;
 	public SignalBus signalBus = new SignalBus();
 	void Awake() {
 		
@@ -37,6 +39,9 @@ public class PlayerMain : MonoBehaviour
 		if(hitBox){
 			var hitBoxComp = hitBox.GetComponent<ColliderLayerComp>();
 			hitBoxComp.OnDetectCollisionEnter(OnDetectCollisionEnter);
+		}
+		if(!animator){
+			animator = GetComponentInChildren<Animator>();
 		}
 	}
 
